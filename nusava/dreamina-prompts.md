@@ -138,7 +138,7 @@ Audios grabados por escena para montar sobre el video en CapCut/Dreamina. Voz ho
 | 2 | 3–7 s | `audio/video2_scene2.mp3` | "Me tomaba la pastilla con agua, y no sentía nada." |
 | 3 | 7–11 s | `audio/video2_scene3.mp3` | "Cambié a las goticas sublinguales de nusava." |
 | 4 | 11–15 s | `audio/video2_scene4.mp3` | "Energía, foco y ánimo desde la primera semana." |
-| 5 | 15–18 s | ⏳ `audio/video2_scene5.mp3` (pendiente: se genera en el próximo turno) | "Nusava. Yo a las pastillas no vuelvo." |
+| 5 | 15–18 s | `audio/video2_scene5.mp3` | "Nusava. Yo a las pastillas no vuelvo." |
 
 Los guiones están escritos para caber en su ventana (~2–3 s de habla cada uno). Si me pegas el contenido de tu `voiceover-scripts.md`, regrabo cualquier línea con las mismas voces.
 
