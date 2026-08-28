@@ -1,0 +1,33 @@
+name: Generar nusava MiniMax-H3
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generar 11 clips con MiniMax-H3 (fal.ai)
+        env:
+          FAL_KEY: ${{ secrets.FAL_KEY }}
+          RES: 768P
+        run: python3 nusava/minimax/generate_minimax_h3.py
+
+      - name: Subir resultados a la rama
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add nusava/minimax
+          git commit -m "nusava: clips MiniMax-H3 generados por Actions" || echo "sin cambios"
+          git push origin HEAD:${{ github.ref_name }}
