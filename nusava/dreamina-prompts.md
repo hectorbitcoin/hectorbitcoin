@@ -157,6 +157,17 @@ python3 nusava/wan3/generate_wan3.py   # ~1-5 min por clip
 
 Este sandbox no tiene clave de DashScope ni GPU (verificado en el entorno), así que la llamada a Wan 3.0 se ejecuta desde tu máquina con el comando de arriba; `--dry-run` imprime los payloads JSON ya validados. Después monta la VO de `audio/` encima en CapCut.
 
+## Generación con MiniMax-H3 (alternativa a Wan 3.0)
+
+`nusava/minimax/generate_minimax_h3.py` lanza los 11 clips en **MiniMax-H3** vía fal.ai (`minimax/h3/image-to-video`): cada keyframe público va como `image_url` (first_frame → la salida hereda el 9:16), `duration` 5 s (mínimo de H3; las escenas de 3-4 s se recortan en el edit), `resolution` 768P por defecto (cámbiala con `RES=2K` o `RES=480P`) y `prompt_expansion_mode=disabled` para que no reinterprete la etiqueta nusava. H3 devuelve audio estéreo nativo (ambiente; tu VO de `audio/` se monta encima en CapCut).
+
+```bash
+export FAL_KEY=...                              # tu clave de fal.ai
+python3 nusava/minimax/generate_minimax_h3.py   # descarga a nusava/minimax/*.mp4
+```
+
+Costo aprox. 768P: $0.06/s × 5 s × 11 clips ≈ **$3.30** (2K ≈ $7.15). Este sandbox no tiene FAL_KEY (verificado en el entorno), así que el comando corre en tu máquina; `--dry-run` imprime los payloads ya validados contra el schema oficial de fal.
+
 ---
 
 ## Mapa de archivos
