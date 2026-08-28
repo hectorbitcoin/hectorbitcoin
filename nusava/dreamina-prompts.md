@@ -142,9 +142,9 @@ Audios grabados por escena para montar sobre el video en CapCut/Dreamina. Voz ho
 
 Los guiones están escritos para caber en su ventana (~2–3 s de habla cada uno). Si me pegas el contenido de tu `voiceover-scripts.md`, regrabo cualquier línea con las mismas voces.
 
-## Video ensamblado (animatic)
+## Video ensamblado (montaje final)
 
-`video1_animatic.mp4` (29.9 s) y `video2_animatic.mp4` (21.9 s): los keyframes montados en orden con movimiento de cámara (Ken Burns) y la VO encima, 1080×1920 h264+aac. Las escenas se extendieron automáticamente para no cortar ninguna línea de VO (por eso V1 dura ~30 s en vez de 25 s). Regenerarlos: `python3 nusava/build_animatic.py`.
+`video1_final.mp4` (29.9 s) y `video2_final.mp4` (21.9 s): keyframes en orden con movimiento de cámara (Ken Burns), VO sincronizada y textos quemados (título "CÓMO DEJÉ EL CAFÉ" / "DEJÉ LAS PASTILLAS", captions por escena, línea de marca y disclaimer de cumplimiento), 1080×1920 h264+aac. Las escenas se extienden solas para no cortar ninguna línea de VO. Los `*_animatic.mp4` son la versión anterior sin textos. Regenerar: `python3 nusava/build_animatic.py`. Cuando tengas los clips reales de MiniMax-H3/Wan, móntalos en el mismo orden y tiempos con la VO y los textos de este paquete en CapCut.
 
 ## Generación con Wan 3.0 (motion real)
 
@@ -177,8 +177,9 @@ Costo aprox. 768P: $0.06/s × 5 s × 11 clips ≈ **$3.30** (2K ≈ $7.15). Este
 | `video1/scene1_hook.png` … `scene6_cta.png` | Keyframes 9:16 Video 1 |
 | `video2/scene1_hook.png` … `scene5_cta.png` | Keyframes 9:16 Video 2 |
 | `audio/video1_scene*.mp3`, `audio/video2_scene*.mp3` | Voz en off por escena |
-| `video1_animatic.mp4`, `video2_animatic.mp4` | Video ensamblado (keyframes + Ken Burns + VO) |
-| `build_animatic.py` | Regenera los animatics |
+| `video1_final.mp4`, `video2_final.mp4` | Montaje final (keyframes + Ken Burns + VO + textos) |
+| `video1_animatic.mp4`, `video2_animatic.mp4` | Versión anterior sin textos |
+| `build_animatic.py` | Regenera los videos finales |
 | `wan3/generate_wan3.py` | Genera los 11 clips en Wan 3.0 con tu DASHSCOPE_API_KEY |
 | `dreamina-prompts.md` | Este documento |
 
