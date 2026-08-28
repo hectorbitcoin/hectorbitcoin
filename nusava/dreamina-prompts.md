@@ -117,12 +117,40 @@ Vertical 9:16 UGC testimonial, one continuous take: a young woman at home holds 
 
 ---
 
+## Voz en off (VO)
+
+Audios grabados por escena para montar sobre el video en CapCut/Dreamina. Voz hombre = `voice-04`, voz mujer = `voice-05` (español latino conversacional; el acento colombiano `es-CO` no existe en el sistema de TTS — es-MX es lo más cercano disponible; el tono humano/coloquial va en el texto).
+
+### Video 1 — voz masculina
+| Escena | Ventana | Audio | Guion |
+|---|---|---|---|
+| 1 | 0–3 s | `audio/video1_scene1.mp3` | "Yo también vivía pegado del café." |
+| 2 | 3–8 s | `audio/video1_scene2.mp3` | "Cuatro tazas al día, y a las tres de la tarde ya estaba dormido en el escritorio." |
+| 3 | 8–13 s | `audio/video1_scene3.mp3` | "Hasta que probé nusava: B12 en gotas, debajo de la lengua, y listo." |
+| 4 | 13–18 s | `audio/video1_scene4.mp3` | "Sin bajones, sin nervios, y sin el cuarto café de la tarde." |
+| 5 | 18–22 s | `audio/video1_scene5.mp3` | "Energía pareja para entrenar y para todo el día." |
+| 6 | 22–25 s | `audio/video1_scene6.mp3` | "Nusava. B12 que sí se siente." |
+
+### Video 2 — voz femenina
+| Escena | Ventana | Audio | Guion |
+|---|---|---|---|
+| 1 | 0–3 s | `audio/video2_scene1.mp3` | "Yo también creía que todas las B12 eran iguales." |
+| 2 | 3–7 s | `audio/video2_scene2.mp3` | "Me tomaba la pastilla con agua, y no sentía nada." |
+| 3 | 7–11 s | `audio/video2_scene3.mp3` | "Cambié a las goticas sublinguales de nusava." |
+| 4 | 11–15 s | `audio/video2_scene4.mp3` | "Energía, foco y ánimo desde la primera semana." |
+| 5 | 15–18 s | ⏳ `audio/video2_scene5.mp3` (pendiente: se genera en el próximo turno) | "Nusava. Yo a las pastillas no vuelvo." |
+
+Los guiones están escritos para caber en su ventana (~2–3 s de habla cada uno). Si me pegas el contenido de tu `voiceover-scripts.md`, regrabo cualquier línea con las mismas voces.
+
+---
+
 ## Mapa de archivos
 
 | Archivo | Contenido |
 |---|---|
 | `video1/scene1_hook.png` … `scene6_cta.png` | Keyframes 9:16 Video 1 |
 | `video2/scene1_hook.png` … `scene5_cta.png` | Keyframes 9:16 Video 2 |
+| `audio/video1_scene*.mp3`, `audio/video2_scene*.mp3` | Voz en off por escena |
 | `dreamina-prompts.md` | Este documento |
 
 Notas de producto aplicadas a todos los prompts: líquido **rojo frambuesa** (no dorado), etiqueta blanca con barras de dosis, caja negra con panel rojo de beneficios (NON-GMO, ALL NATURAL, GLUTEN-FREE, ENERGY SUPPORT, BRAIN & MOOD SUPPORT, HEART & IMMUNE SUPPORT).
