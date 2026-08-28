@@ -121,6 +121,35 @@ def build_scene(video, cfg, idx, n, scene, audio, window, tmp):
     return out, dur
 
 
+def assemble(parts, final, T=0.4):
+    durs = [probe_dur(p) for p in parts]
+    n = len(parts)
+    inputs = []
+    for p in parts:
+        inputs += ["-i", p]
+    fc, prev, cum = [], "[0:v]", durs[0]
+    for i in range(1, n):
+        out = "[x%d]" % i
+        fc.append("%s[%d:v]xfade=transition=fade:duration=%.2f:offset=%.2f%s"
+                  % (prev, i, T, cum - T, out))
+        prev = out
+        cum += durs[i] - T
+    preva = "[0:a]"
+    for i in range(1, n):
+        outa = "[a%d]" % i
+        fc.append("%s[%d:a]acrossfade=d=%.2f%s" % (preva, i, T, outa))
+        preva = outa
+    cmd = [FF, "-y"] + inputs + ["-filter_complex", ";".join(fc),
+           "-map", prev, "-map", preva,
+           "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+           "-c:a", "aac", "-b:a", "128k", final]
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    if r.returncode != 0:
+        print(r.stderr[-3000:], file=sys.stderr)
+        raise SystemExit("xfade fallo en " + final)
+    return cum
+
+
 def main():
     for video, cfg in VIDEOS.items():
         n = len(cfg["scenes"])
@@ -132,18 +161,9 @@ def main():
                                        tmp)
                 parts.append(out)
                 total += dur
-            listf = os.path.join(tmp, "list.txt")
-            with open(listf, "w") as f:
-                for p in parts:
-                    f.write("file '%s'\n" % p)
             final = os.path.join(ROOT, video + "_final.mp4")
-            r = subprocess.run([FF, "-y", "-f", "concat", "-safe", "0",
-                                "-i", listf, "-c", "copy", final],
-                               capture_output=True, text=True)
-            if r.returncode != 0:
-                print(r.stderr[-2000:], file=sys.stderr)
-                raise SystemExit("concat fallo en " + video)
-            print("%s -> %s (%.1fs)" % (video, final, total))
+            total = assemble(parts, final)
+            print("%s -> %s (%.1fs con crossfades)" % (video, final, total))
 
 
 if __name__ == "__main__":

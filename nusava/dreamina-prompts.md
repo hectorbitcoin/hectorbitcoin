@@ -144,7 +144,7 @@ Los guiones están escritos para caber en su ventana (~2–3 s de habla cada uno
 
 ## Video ensamblado (montaje final)
 
-`video1_final.mp4` (29.9 s) y `video2_final.mp4` (21.9 s): keyframes en orden con movimiento de cámara (Ken Burns), VO sincronizada y textos quemados (título "CÓMO DEJÉ EL CAFÉ" / "DEJÉ LAS PASTILLAS", captions por escena, línea de marca y disclaimer de cumplimiento), 1080×1920 h264+aac. Las escenas se extienden solas para no cortar ninguna línea de VO. Los `*_animatic.mp4` son la versión anterior sin textos. Regenerar: `python3 nusava/build_animatic.py`. Cuando tengas los clips reales de MiniMax-H3/Wan, móntalos en el mismo orden y tiempos con la VO y los textos de este paquete en CapCut.
+`video1_final.mp4` (28.0 s) y `video2_final.mp4` (20.4 s): keyframes en orden con movimiento de cámara (Ken Burns), crossfades de 0.4 s entre escenas (video y audio cruzados), VO sincronizada y textos quemados (título "CÓMO DEJÉ EL CAFÉ" / "DEJÉ LAS PASTILLAS", captions por escena, línea de marca y disclaimer de cumplimiento), 1080×1920 h264+aac. Las escenas se extienden solas para no cortar ninguna línea de VO. Los `*_animatic.mp4` son la versión anterior sin textos. Regenerar: `python3 nusava/build_animatic.py`. Cuando tengas los clips reales de MiniMax-H3/Wan, móntalos en el mismo orden y tiempos con la VO y los textos de este paquete en CapCut.
 
 ## Generación con Wan 3.0 (motion real)
 
