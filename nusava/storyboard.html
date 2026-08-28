@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nusava — Storyboard MiniMax-H3</title>
+<style>
+  :root{--bg:#0d0f12;--card:#171b21;--tx:#e8ecf1;--mut:#9aa4b2;--acc:#ff5c7a;--ok:#3ddc84}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,sans-serif}
+  header{padding:20px 16px 8px;max-width:1080px;margin:auto}
+  h1{font-size:22px;margin:0 0 6px}h1 span{color:var(--acc)}
+  .how{background:var(--card);border:1px solid #2a313b;border-radius:12px;padding:14px;margin:10px 0 18px}
+  .how ol{margin:6px 0 0;padding-left:20px}.how li{margin:3px 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;max-width:1080px;margin:auto;padding:0 16px 30px}
+  .card{background:var(--card);border:1px solid #2a313b;border-radius:12px;overflow:hidden}
+  .card img{width:100%;display:block;aspect-ratio:9/16;object-fit:cover}
+  .body{padding:10px 12px 12px}
+  .tag{display:inline-block;background:#232a33;color:var(--mut);border-radius:6px;padding:2px 8px;font-size:12px;margin-bottom:6px}
+  pre{white-space:pre-wrap;background:#10141a;border:1px solid #262d37;border-radius:8px;padding:8px;font:12px/1.45 ui-monospace,monospace;margin:6px 0;max-height:150px;overflow:auto}
+  button{background:var(--acc);border:0;color:#fff;border-radius:8px;padding:7px 12px;font-weight:600;cursor:pointer}
+  button.ok{background:var(--ok)}
+  a{color:#7cc4ff}
+  audio{width:100%;margin-top:6px;height:36px}
+  h2{max-width:1080px;margin:26px auto 10px;padding:0 16px;font-size:18px}
+</style>
+</head>
+<body>
+<header>
+  <h1>nusava <span>·</span> Storyboard para MiniMax-H3</h1>
+  <div class="how">
+    <strong>Cómo usar con el Hub de MiniMax (H3):</strong>
+    <ol>
+      <li>Abre cada escena: descarga la imagen (o mantenla abierta) y copia el prompt.</li>
+      <li>En el Hub elige <b>Image-to-Video</b>, sube la imagen como primer frame y pega el prompt.</li>
+      <li>Duración: 5–15 s (H3 no hace menos de 5 s). La salida hereda el 9:16 de la imagen.</li>
+      <li>Si te quedan pocas generaciones gratis, usa los <b>4 prompts-bloque</b> de abajo (≤15 s cada uno).</li>
+      <li>Monta la VO (reproductor en cada tarjeta) encima en CapCut.</li>
+    </ol>
+  </div>
+</header>
+
+<h2>Video 1 — “Cómo dejé el café”</h2>
+<div class="grid">
+  <div class="card"><img src="video1/scene1_hook.png" alt=""><div class="body">
+    <span class="tag">V1 · Escena 1 · 0–3 s · Hook</span>
+    <pre>Close-up of a fit young man in his late 20s looking directly at camera with a tired expression, gym background blurred, natural afternoon lighting, cinematic shallow depth of field, camera slowly pushes in on his face, vertical 9:16</pre>
+    <button onclick="cp(this)">Copiar prompt</button> <a href="video1/scene1_hook.png" download>⬇ imagen</a>
+    <audio controls src="audio/video1_scene1.mp3"></audio></div></div>
+  <div class="card"><img src="video1/scene2_problem.png" alt=""><div class="body">
+    <span class="tag">V1 · Escena 2 · 3–8 s · Problema</span>
+    <pre>Medium shot of a tired person sitting at a desk yawning, three empty coffee cups on the desk, afternoon golden light through a window, head resting on hand, laptop open but ignored, documentary style, natural colors, vertical 9:16</pre>
+    <button onclick="cp(this)">Copiar prompt</button> <a href="video1/scene2_problem.png" download>⬇ imagen</a>
+    <audio controls src="audio/video1_scene2.mp3"></audio></div></div>
+  <div class="card"><img src="video1/scene3_product.png" alt=""><div class="body">
+    <span class="tag">V1 · Escena 3 · 8–13 s · Producto</span>
+    <pre>Close-up of hands holding a 60ml dark amber glass dropper bottle with black cap and white label showing green leaf logo nusava, green VEGAN badge, red bar B12 5000mcg, yellow bar B6 3400mcg, orange bar B1 2400mcg, NIACIN+FOLATE, RASPBERRY FLAVOR, bottle identical to the first frame. Person examines the bottle in kitchen lighting, shallow depth of field, casual authentic feel, camera slowly rotates around the bottle, vertical 9:16</pre>
+    <button onclick="cp(this)">Copiar prompt</button> <a href="video1/scene3_product.png" download>⬇ imagen</a>
+    <audio controls src="audio/video1_scene3.mp3"></audio></div></div>
+  <div class="card"><img src="video1/scene4_demo.png" alt=""><div class="body">
+    <span class="tag">V1 · Escena 4 · 13–18 s · Demo</span>
+    <pre>Close-up of a person tilting head back, eyes closed, placing sublingual drops under their tongue from a glass dropper holding deep red raspberry liquid, natural morning light, kitchen background, slow deliberate action, authentic handheld camera feel, vertical 9:16</pre>
+    <button onclick="cp(this)">Copiar prompt</button> <a href="video1/scene4_demo.png" download>⬇ imagen</a>
+    <audio controls src="audio/video1_scene4.mp3"></audio></div></div>
+  <div class="card"><img src="video1/scene5_energy.png" alt=""><div class="body">
+    <span class="tag">V1 · Escena 5 · 18–22 s · Energía</span>
+    <pre>Dynamic shot of a fit person training energetically in a gym, lifting weights with focus and power, sweat visible, warm gym lighting, cinematic motion blur, motivational energy, vertical 9:16</pre>
+    <button onclick="cp(this)">Copiar prompt</button> <a href="video1/scene5_energy.png" download>⬇ imagen</a>
+    <audio controls src="audio/video1_scene5.mp3"></audio></div></div>
+  <div class="card"><img src="video1/scene6_cta.png" alt=""><div class="body">
+    <span class="tag">V1 · Escena 6 · 22–25 s · CTA</span>
+    <pre>Product hero shot of the nusava 60ml dark amber dropper bottle standing next to its black retail box with red benefits panel, centered on clean white surface, soft natural window light, minimalist aesthetic, slight bokeh, professional but authentic, vertical 9:16</pre>
+    <button onclick="cp(this)">Copiar prompt</button> <a href="video1/scene6_cta.png" download>⬇ imagen</a>
+    <audio controls src="audio/video1_scene6.mp3"></audio></div></div>
+</div>
+
+<h2>Video 2 — “Dejé las pastillas”</h2>
+<div class="grid">
+  <div class="card"><img src="video2/scene1_hook.png" alt=""><div class="body">
+    <span class="tag">V2 · Escena 1 · 0–3 s · Hook</span>
+    <pre>Medium shot of a young woman in her mid-20s holding a white supplement pill bottle, looking at camera with skeptical knowing expression, slight head shake, casual home setting, natural daylight, authentic UGC feel, vertical 9:16</pre>
+    <button onclick="cp(this)">Copiar prompt</button> <a href="video2/scene1_hook.png" download>⬇ imagen</a>
+    <audio controls src="audio/video2_scene1.mp3"></audio></div></div>
+  <div class="card"><img src="video2/scene2_problem.png" alt=""><div class="body">
+    <span class="tag">V2 · Escena 2 · 3–7 s · Problema</span>
+    <pre>Close-up of a hand dropping a white pill into a clear glass of water, pill sinks slowly with small bubbles forming, camera follows the pill down, macro shot, clean kitchen setting, soft lighting, vertical 9:16</pre>
+    <button onclick="cp(this)">Copiar prompt</button> <a href="video2/scene2_problem.png" download>⬇ imagen</a>
+    <audio controls src="audio/video2_scene2.mp3"></audio></div></div>
+  <div class="card"><img src="video2/scene3_solution.png" alt=""><div class="body">
+    <span class="tag">V2 · Escena 3 · 7–11 s · Solución</span>
+    <pre>Hands opening a 60ml dark amber nusava bottle, pulling out the glass dropper showing deep red raspberry liquid, camera focuses on the drop forming at the tip, warm natural lighting, kitchen background blurred, product reveal moment, vertical 9:16</pre>
+    <button onclick="cp(this)">Copiar prompt</button> <a href="video2/scene3_solution.png" download>⬇ imagen</a>
+    <audio controls src="audio/video2_scene3.mp3"></audio></div></div>
+  <div class="card"><img src="video2/scene4_result.png" alt=""><div class="body">
+    <span class="tag">V2 · Escena 4 · 11–15 s · Resultado</span>
+    <pre>Quick montage of a person training in gym with energy, then focused working on laptop, then walking outside with sunlight on face, warm golden tones, person looks vibrant and healthy, dynamic cuts, lifestyle feel, vertical 9:16</pre>
+    <button onclick="cp(this)">Copiar prompt</button> <a href="video2/scene4_result.png" download>⬇ imagen</a>
+    <audio controls src="audio/video2_scene4.mp3"></audio></div></div>
+  <div class="card"><img src="video2/scene5_cta.png" alt=""><div class="body">
+    <span class="tag">V2 · Escena 5 · 15–18 s · CTA</span>
+    <pre>The same young woman now smiling confidently, holding the nusava 60ml amber dropper bottle next to her face, warm natural light, product visible and in focus, authentic testimonial style, vertical 9:16</pre>
+    <button onclick="cp(this)">Copiar prompt</button> <a href="video2/scene5_cta.png" download>⬇ imagen</a>
+    <audio controls src="audio/video2_scene5.mp3"></audio></div></div>
+</div>
+
+<h2>Prompts-bloque (si tienes pocas generaciones)</h2>
+<div class="grid">
+  <div class="card"><img src="video1/scene1_hook.png" alt=""><div class="body">
+    <span class="tag">BLOQUE V1-A · ≤15 s · primer frame: escena 1</span>
+    <pre>Vertical 9:16 UGC ad, continuous take: a fit young man in his late 20s looks at camera tired in a blurred gym, camera pushes in; whip pan to him yawning at a desk with three empty coffee cups in golden afternoon light, head on hand; he then picks up and examines a 60ml dark amber nusava dropper bottle (white label, green leaf logo, VEGAN badge, red B12 5000mcg bar, yellow B6 3400mcg bar, orange B1 2400mcg bar), camera slowly rotates around the bottle. Authentic handheld feel, natural colors.</pre>
+    <button onclick="cp(this)">Copiar prompt</button></div></div>
+  <div class="card"><img src="video1/scene4_demo.png" alt=""><div class="body">
+    <span class="tag">BLOQUE V1-B · ≤15 s · primer frame: escena 4</span>
+    <pre>Vertical 9:16 UGC ad, continuous take: close-up of a person tilting head back, eyes closed, placing deep red raspberry drops under the tongue from a glass dropper; cut to the same person training explosively in a gym with sweat and warm light; final frame: the nusava amber bottle and its black retail box centered on a white surface in soft window light. Authentic handheld feel.</pre>
+    <button onclick="cp(this)">Copiar prompt</button></div></div>
+  <div class="card"><img src="video2/scene1_hook.png" alt=""><div class="body">
+    <span class="tag">BLOQUE V2-A · ≤15 s · primer frame: escena 1</span>
+    <pre>Vertical 9:16 UGC testimonial, continuous take: a young woman holds a white pill bottle with a skeptical head shake; macro insert of a white pill sinking with bubbles in a glass of water; she then opens a 60ml dark amber nusava bottle and lifts the dropper with a deep red raspberry drop forming, warm kitchen light. Authentic feel.</pre>
+    <button onclick="cp(this)">Copiar prompt</button></div></div>
+  <div class="card"><img src="video2/scene4_result.png" alt=""><div class="body">
+    <span class="tag">BLOQUE V2-B · ≤15 s · primer frame: escena 4</span>
+    <pre>Vertical 9:16 UGC testimonial, continuous take: a vibrant young woman walking outside with golden sunlight on her face, then smiling confidently at camera holding the nusava amber dropper bottle next to her cheek, product in focus, warm natural light.</pre>
+    <button onclick="cp(this)">Copiar prompt</button></div></div>
+</div>
+
+<script>
+function cp(btn){
+  const pre = btn.parentElement.querySelector('pre');
+  navigator.clipboard.writeText(pre.textContent.trim()).then(()=>{
+    btn.textContent='✓ copiado'; btn.classList.add('ok');
+    setTimeout(()=>{btn.textContent='Copiar prompt'; btn.classList.remove('ok');},1500);
+  });
+}
+</script>
+</body>
+</html>
