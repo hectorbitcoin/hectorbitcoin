@@ -142,6 +142,21 @@ Audios grabados por escena para montar sobre el video en CapCut/Dreamina. Voz ho
 
 Los guiones están escritos para caber en su ventana (~2–3 s de habla cada uno). Si me pegas el contenido de tu `voiceover-scripts.md`, regrabo cualquier línea con las mismas voces.
 
+## Video ensamblado (animatic)
+
+`video1_animatic.mp4` (29.9 s) y `video2_animatic.mp4` (21.9 s): los keyframes montados en orden con movimiento de cámara (Ken Burns) y la VO encima, 1080×1920 h264+aac. Las escenas se extendieron automáticamente para no cortar ninguna línea de VO (por eso V1 dura ~30 s en vez de 25 s). Regenerarlos: `python3 nusava/build_animatic.py`.
+
+## Generación con Wan 3.0 (motion real)
+
+`nusava/wan3/generate_wan3.py` lanza los 11 clips en Wan 3.0 (Alibaba Model Studio, modelo `wan3.0-video`) usando cada keyframe público como `first_frame`, ratio 9:16, 720P y la duración del storyboard; poll del job asíncrono y descarga a `nusava/wan3/*.mp4`.
+
+```bash
+export DASHSCOPE_API_KEY=sk-...        # tu clave de Alibaba Cloud Model Studio
+python3 nusava/wan3/generate_wan3.py   # ~1-5 min por clip
+```
+
+Este sandbox no tiene clave de DashScope ni GPU (verificado en el entorno), así que la llamada a Wan 3.0 se ejecuta desde tu máquina con el comando de arriba; `--dry-run` imprime los payloads JSON ya validados. Después monta la VO de `audio/` encima en CapCut.
+
 ---
 
 ## Mapa de archivos
@@ -151,6 +166,9 @@ Los guiones están escritos para caber en su ventana (~2–3 s de habla cada uno
 | `video1/scene1_hook.png` … `scene6_cta.png` | Keyframes 9:16 Video 1 |
 | `video2/scene1_hook.png` … `scene5_cta.png` | Keyframes 9:16 Video 2 |
 | `audio/video1_scene*.mp3`, `audio/video2_scene*.mp3` | Voz en off por escena |
+| `video1_animatic.mp4`, `video2_animatic.mp4` | Video ensamblado (keyframes + Ken Burns + VO) |
+| `build_animatic.py` | Regenera los animatics |
+| `wan3/generate_wan3.py` | Genera los 11 clips en Wan 3.0 con tu DASHSCOPE_API_KEY |
 | `dreamina-prompts.md` | Este documento |
 
 Notas de producto aplicadas a todos los prompts: líquido **rojo frambuesa** (no dorado), etiqueta blanca con barras de dosis, caja negra con panel rojo de beneficios (NON-GMO, ALL NATURAL, GLUTEN-FREE, ENERGY SUPPORT, BRAIN & MOOD SUPPORT, HEART & IMMUNE SUPPORT).
