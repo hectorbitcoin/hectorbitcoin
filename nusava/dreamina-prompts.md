@@ -170,6 +170,14 @@ Costo aprox. 768P: $0.06/s × 5 s × 11 clips ≈ **$3.30** (2K ≈ $7.15). Este
 
 ---
 
+## Montaje en CapCut con clips reales (checklist)
+
+1. Genera los clips en el Hub de MiniMax (storyboard web de este repo) — 11 escenas o 4 bloques.
+2. CapCut → proyecto 9:16 → importa los clips en orden de escena y recórtalos a su ventana.
+3. Audio: arrastra `audio/videoX_vo_full.mp3` como UNA pista desde 0:00 — ya trae los silencios alineados a los tiempos del final (incluye el descuadre de los crossfades).
+4. Subtítulos: importa `subs/videoX.srt` (o usa nuestro `videoX_final.mp4` que ya los trae quemados).
+5. Miniatura para TikTok/Reels: `covers/videoX_cover.png`.
+
 ## Mapa de archivos
 
 | Archivo | Contenido |
@@ -177,6 +185,9 @@ Costo aprox. 768P: $0.06/s × 5 s × 11 clips ≈ **$3.30** (2K ≈ $7.15). Este
 | `video1/scene1_hook.png` … `scene6_cta.png` | Keyframes 9:16 Video 1 |
 | `video2/scene1_hook.png` … `scene5_cta.png` | Keyframes 9:16 Video 2 |
 | `audio/video1_scene*.mp3`, `audio/video2_scene*.mp3` | Voz en off por escena |
+| `audio/video1_vo_full.mp3`, `audio/video2_vo_full.mp3` | VO completa en una pista, con silencios alineados |
+| `subs/video1.srt`, `subs/video2.srt` | Subtítulos para CapCut |
+| `covers/video1_cover.png`, `covers/video2_cover.png` | Miniaturas 9:16 para publicar |
 | `video1_final.mp4`, `video2_final.mp4` | Montaje final (keyframes + Ken Burns + VO + textos) |
 | `video1_animatic.mp4`, `video2_animatic.mp4` | Versión anterior sin textos |
 | `build_animatic.py` | Regenera los videos finales |
