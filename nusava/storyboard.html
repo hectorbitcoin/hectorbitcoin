@@ -28,13 +28,12 @@
 <header>
   <h1>nusava <span>·</span> Storyboard para MiniMax-H3</h1>
   <div class="how">
-    <strong>Cómo usar con el Hub de MiniMax (H3):</strong>
+    <strong>Cómo usar con MiniMax-H3 gratis (minimax-h3.app, sin tarjeta):</strong>
     <ol>
-      <li>Abre cada escena: descarga la imagen (o mantenla abierta) y copia el prompt.</li>
-      <li>En el Hub elige <b>Image-to-Video</b>, sube la imagen como primer frame y pega el prompt.</li>
-      <li>Duración: 5–15 s (H3 no hace menos de 5 s). La salida hereda el 9:16 de la imagen.</li>
-      <li>Si te quedan pocas generaciones gratis, usa los <b>4 prompts-bloque</b> de abajo (≤15 s cada uno).</li>
-      <li>Monta la VO (reproductor en cada tarjeta) encima en CapCut.</li>
+      <li>Abre <a href="https://minimax-h3.app/image-to-video" target="_blank">minimax-h3.app/image-to-video</a> (o el link "▶ generar" de cada tarjeta).</li>
+      <li>Sube la imagen de la escena (botón ⬇) y pega el prompt copiado.</li>
+      <li>Duración 5–15 s; la salida hereda el 9:16. Descarga el clip y repite (o usa los 4 prompts-bloque si quieres gastar menos generaciones).</li>
+      <li>Monta los clips en orden en CapCut con <b>audio/videoX_vo_full.mp3</b> desde 0:00 y <b>subs/videoX.srt</b>.</li>
     </ol>
   </div>
 </header>
@@ -123,6 +122,12 @@
 </div>
 
 <script>
+document.querySelectorAll('.card .body').forEach(function(b){
+  var a=document.createElement('a');
+  a.href='https://minimax-h3.app/image-to-video';a.target='_blank';
+  a.textContent='▶ generar en MiniMax-H3';a.style.marginLeft='10px';
+  b.querySelector('button').after(a);
+});
 function cp(btn){
   const pre = btn.parentElement.querySelector('pre');
   navigator.clipboard.writeText(pre.textContent.trim()).then(()=>{
